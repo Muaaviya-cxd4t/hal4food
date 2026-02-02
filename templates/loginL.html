@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HAL Organizer Login</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(black, rgb(60, 0, 49));
+      }
+
+      .container {
+        width: 100%;
+        max-width: 360px;
+        background-color: #eed4f3;
+        padding: 32px;
+        border-radius: 8px;
+        border: 1px solid #e5e7eb;
+        text-align: center;
+      }
+
+      .logo {
+        width: 80px;
+        height: auto;
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        margin-bottom: 24px;
+        color: #1f2937;
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        text-align: left;
+      }
+
+      label {
+        color: #1f2937;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      input {
+        padding: 10px 12px;
+        border-radius: 6px;
+        border: 1px solid #d1d5db;
+        font-size: 14px;
+        outline: none;
+      }
+
+      input:focus {
+        border-color: #0ea5e9;
+      }
+
+      input[type="submit"] {
+        margin-top: 16px;
+        background-color: #21001d;
+        color: #ffffff;
+        border: none;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0284c7;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <img
+        src="{{ url_for('static', filename='Logo.png') }}"
+        style="width: 80px; height: auto; display: block; margin: 0 auto"
+      />
+
+      <h1>JUDGE SCORE LOGIN</h1>
+
+      <form method="POST" action="/login-logistics">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+  </body>
+</html>
