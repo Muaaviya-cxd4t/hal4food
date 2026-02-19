@@ -4,3 +4,5 @@ qrcode
 pandas
 os
 csv
+sqlite3
+sys
