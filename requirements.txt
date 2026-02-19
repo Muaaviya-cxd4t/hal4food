@@ -1,8 +1,6 @@
 Flask
-flask-login
-qrcode
+Flask-Login
+flask-bcrypt
+qrcode[pil]
 pandas
-os
-csv
-sqlite3
-sys
+gunicorn
