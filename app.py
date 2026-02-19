@@ -90,6 +90,15 @@ def load_user(user_id):
     return None
 
 # ---------------- ROUTES -----------------------------------------------------------------------------------------------------------------------------------------------------
+@app.route("/admin/db")
+def view_db():
+    import sqlite3
+    conn = sqlite3.connect("qrcodes.db")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM participants")
+    data = cur.fetchall()
+    conn.close()
+    return str(data)
 
 @app.route("/")
 def main():
